@@ -4,6 +4,8 @@ const fetchPromise = fetch(
   
   console.log(fetchPromise);
   
+  // this happens asynch too 
+  // ater the pending is completed the below codes runs 
   fetchPromise.then((response) => {
     console.log(`Received response? ${response.ok? 'yes' : 'no'}`);
     console.log(`Response Status: ${response.status}`);
@@ -11,3 +13,4 @@ const fetchPromise = fetch(
   
   console.log("Started request…");
   
+  // fetch will execute sync execution 
