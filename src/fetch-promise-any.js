@@ -7,7 +7,7 @@ const fetchPromise1 = fetch(
   const fetchPromise3 = fetch(
     "file://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json",
   );
-  
+  // give only one error; all has to fail for the catch to run
   Promise.any([fetchPromise1, fetchPromise2, fetchPromise3])
     .then((response) => {
         console.log(`${response.url}: ${response.status}`);

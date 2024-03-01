@@ -1,7 +1,11 @@
+const { syncBuiltinESMExports } = require("module");
+
 function sum2DArray(arr) {
     return new Promise((resolve, reject) => {
         console.log('Sum called ... ');
+        // checking if the input is array
         if(Array.isArray(arr)) {
+            // setTimeout will put this in the loop
             setTimeout(() => {
                 let sum = 0;
                 for (let i = 0; i < arr.length; i++) {
@@ -29,7 +33,13 @@ const array2D = [
 ];
 
 const sumPromise1 = sum2DArray(array2D);
-console.log(sumPromise1);
+sumPromise1
+    .then((res) => console.log(res))
+    .catch((err) => console.log(err));
 
+    
 const sumPromise2 = sum2DArray('array2D');
-console.log(sumPromise2);
+sumPromise2
+.then((res) => console.log(res))
+.catch((err) => console.log(err));
+//this gives an error as the input is not an array
